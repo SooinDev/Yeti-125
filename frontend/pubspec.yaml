@@ -1,0 +1,38 @@
+name: yeti_125
+description: "이리온 스트리머의 공식 팬 앱 - 방송 알림, 리플레이, 커뮤니티 기능 제공"
+publish_to: 'none'
+
+version: 1.0.0+13
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  
+  # 이 줄을 추가해주세요.
+  http: ^1.1.0
+  firebase_core: ^3.15.2
+  firebase_messaging: ^15.1.4
+  intl: ^0.20.2
+  url_launcher: ^6.3.0
+  shared_preferences: ^2.2.2
+  provider: ^6.1.1
+  fl_chart: ^0.69.0
+  webview_flutter: ^4.4.2
+  share_plus: ^10.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/

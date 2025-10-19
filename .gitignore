@@ -1,0 +1,134 @@
+# ================================
+# Frontend (Flutter)
+# ================================
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio build artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Firebase configuration files
+**/google-services.json
+**/GoogleService-Info.plist
+lib/firebase_options.dart
+
+# Frontend environment variables
+.env
+.env.local
+.env.*.local
+
+# Local configuration
+lib/config/local_config.dart
+
+# ================================
+# Backend (Spring + Maven)
+# ================================
+
+# Maven build output
+backend/target/
+!backend/.mvn/wrapper/maven-wrapper.jar
+!backend/**/src/main/**/target/
+!backend/**/src/test/**/target/
+
+# Sensitive Information
+# 채널 ID 등 민감한 정보
+backend/src/main/resources/application.properties
+backend/src/main/resources/application-*.properties
+backend/src/main/resources/config.properties
+
+# 데이터베이스 설정
+backend/src/main/resources/jdbc.properties
+backend/src/main/resources/database.properties
+
+# 환경 변수 파일
+backend/.env
+backend/.env.*
+
+# Eclipse
+backend/.apt_generated
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings
+backend/.springBeans
+backend/.sts4-cache
+backend/bin/
+
+# NetBeans
+backend/nbproject/private/
+backend/nbbuild/
+backend/dist/
+backend/nbdist/
+backend/.nb-gradle/
+backend/build/
+!backend/**/src/main/**/build/
+!backend/**/src/test/**/build/
+
+# ================================
+# Common
+# ================================
+
+# Logs
+*.log
+logs/
+!logs/.gitkeep
+
+# OS Files
+# Mac
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+backend/src/main/resources/key/*.json

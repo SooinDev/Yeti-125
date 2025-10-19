@@ -1,0 +1,82 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# Sensitive Information
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+
+# Firebase 설정 파일 (민감 정보 포함)
+**/google-services.json
+**/GoogleService-Info.plist
+# firebase_options.dart는 커밋해도 됨 (공개 키만 포함)
+
+# 로컬 설정 파일
+**/local_config.dart
+lib/config/local_config.dart
+**/secrets.dart
+**/api_keys.dart
+config.properties
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Web related
+/build/web/
+
+# iOS related
+/build/ios/
+
+# macOS related
+/build/macos/
+
+# Windows related
+/build/windows/
+
+# Linux related
+/build/linux/

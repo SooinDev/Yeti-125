@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.foririon.project.mapper.NotificationMapper">
+
+  <insert id="insertToken" parameterType="string">
+    INSERT IGNORE INTO devices (fcm_token)
+        VALUES (#{fcmToken})
+  </insert>
+
+  <select id="getAllTokens" resultType="string">
+    SELECT fcm_token FROM devices WHERE is_active = TRUE
+  </select>
+
+</mapper>

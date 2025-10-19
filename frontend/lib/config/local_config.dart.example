@@ -1,0 +1,13 @@
+// 로컬 개발 환경 설정 예제
+// 이 파일을 local_config.dart로 복사하고 자신의 IP 주소로 변경하세요
+// local_config.dart는 .gitignore에 포함되어 GitHub에 올라가지 않습니다
+
+class LocalConfig {
+  // iOS 시뮬레이터에서 개발할 때 사용할 IP 주소
+  // 맥의 IP 주소를 확인하려면 터미널에서 다음 명령어를 실행:
+  // ipconfig getifaddr en0
+  static const String localServerIp = '192.168.x.x'; // 여기에 자신의 IP 입력
+  static const String localServerPort = '8080';
+
+  static String get localServerUrl => 'http://$localServerIp:$localServerPort';
+}

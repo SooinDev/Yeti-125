@@ -1,0 +1,101 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### Sensitive Information ###
+# 채널 ID 등 민감한 정보
+src/main/resources/application.properties
+src/main/resources/application-*.properties
+src/main/resources/config.properties
+
+# 데이터베이스 설정
+src/main/resources/jdbc.properties
+src/main/resources/database.properties
+
+# 로그 파일
+*.log
+logs/
+
+# 환경 변수 파일
+.env
+.env.*
+
+# API 키 및 인증 정보
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+secrets.properties
+api-keys.properties
+credentials.json
+
+# Firebase 서비스 계정 키
+firebase-service-account.json
+for-irion-firebase-adminsdk-*.json
+src/main/resources/firebase-service-account.json
+src/main/resources/for-irion-firebase-adminsdk-*.json
+
+# OAuth 및 토큰
+**/oauth2/
+**/tokens/
+*.token
+
+### IntelliJ IDEA ###
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries
+.idea/shelf
+*.iws
+*.iml
+*.ipr
+out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Temporary files ###
+*.tmp
+*.temp
+*.swp
+*.swo
+*~

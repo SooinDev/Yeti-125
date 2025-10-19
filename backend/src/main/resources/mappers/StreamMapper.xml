@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.foririon.project.mapper.StreamMapper">
+
+  <select id="findByLiveId" resultType="com.foririon.project.vo.StreamVO">
+    SELECT * FROM streams WHERE live_id = #{liveId}
+  </select>
+
+  <insert id="insertStream" parameterType="com.foririon.project.vo.StreamVO">
+    INSERT IGNORE INTO streams (live_id, title, start_time, notification_sent)
+    VALUES (#{liveId}, #{title}, #{startTime}, #{notificationSent})
+  </insert>
+  <update id="updateNotificationSent">
+    UPDATE streams SET notification_sent = TRUE WHERE live_id = #{liveId}
+  </update>
+
+</mapper>
