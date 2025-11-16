@@ -13,11 +13,11 @@ import java.util.List;
 @RequestMapping("/api/schedules")
 public class StreamScheduleController {
 
-  @Autowired
-  private StreamScheduleService streamScheduleService;
+    @Autowired
+    private StreamScheduleService streamScheduleService;
 
-  @GetMapping
-  public List<StreamScheduleVO> getAllSchedules() {
-    return streamScheduleService.getSchedules();
-  }
+    @GetMapping
+    public List<StreamScheduleVO> getAllSchedules() {
+        return streamScheduleService.getSchedules();
+    }
 }

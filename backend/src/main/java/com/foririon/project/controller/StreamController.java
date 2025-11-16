@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/stream")
 public class StreamController {
 
-  @Autowired
-  private StreamService streamService;
+    @Autowired
+    private StreamService streamService;
 
-  @GetMapping("/live-status")
-  public ResponseEntity<LiveStatusContentVO> liveStatus() {
-    return ResponseEntity.ok()
-        .cacheControl(CacheControl.noCache().noStore())
-        .header("Pragma", "no-cache")
-        .body(streamService.getLiveStatus());
-  }
+    @GetMapping("/live-status")
+    public ResponseEntity<LiveStatusContentVO> liveStatus() {
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.noCache().noStore())
+                .header("Pragma", "no-cache")
+                .body(streamService.getLiveStatus());
+    }
 
-  @GetMapping("/is-live")
-  public boolean isCurrentlyLive() {
-    return streamService.isCurrentlyLive();
-  }
+    @GetMapping("/is-live")
+    public boolean isCurrentlyLive() {
+        return streamService.isCurrentlyLive();
+    }
 }

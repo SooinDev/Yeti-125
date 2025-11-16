@@ -5,108 +5,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReplayVO {
-  private String videoId;
-  private Integer videoNo; // 실제 영상 번호
-  private String videoTitle;
+    private String videoId;
+    private Integer videoNo; // 실제 영상 번호
+    private String videoTitle;
 
-  private String thumbnailImageUrl; // API에서 받는 필드명
-  private int readCount; // API에서 받는 필드명
+    private String thumbnailImageUrl; // API에서 받는 필드명
+    private int readCount; // API에서 받는 필드명
 
-  private ChannelVO channel;
+    private ChannelVO channel;
 
-  @JsonProperty("publishDate")
-  private String publishDateAt; // API에서 받은 날짜
+    @JsonProperty("publishDate")
+    private String publishDateAt; // API에서 받은 날짜
 
-  // Flutter에서 필요한 필드 (계산해서 제공)
-  @JsonProperty("clipId")
-  public String getClipId() {
-    return videoId;
-  }
-
-  @JsonProperty("title")
-  public String getTitle() {
-    return videoTitle;
-  }
-
-  @JsonProperty("videoUrl")
-  public String getVideoUrl() {
-    // videoNo가 있으면 videoNo 사용, 없으면 videoId 사용
-    if (videoNo != null) {
-      return "https://chzzk.naver.com/video/" + videoNo;
+    // Flutter에서 필요한 필드 (계산해서 제공)
+    @JsonProperty("clipId")
+    public String getClipId() {
+        return videoId;
     }
-    return "https://chzzk.naver.com/video/" + videoId;
-  }
 
-  @JsonProperty("createdAt")
-  public String getCreatedAt() {
-    return publishDateAt;
-  }
+    @JsonProperty("title")
+    public String getTitle() {
+        return videoTitle;
+    }
 
-  public String getVideoId() {
-    return videoId;
-  }
+    @JsonProperty("videoUrl")
+    public String getVideoUrl() {
+        // videoNo가 있으면 videoNo 사용, 없으면 videoId 사용
+        if (videoNo != null) {
+            return "https://chzzk.naver.com/video/" + videoNo;
+        }
+        return "https://chzzk.naver.com/video/" + videoId;
+    }
 
-  public void setVideoId(String videoId) {
-    this.videoId = videoId;
-  }
+    @JsonProperty("createdAt")
+    public String getCreatedAt() {
+        return publishDateAt;
+    }
 
-  public String getVideoTitle() {
-    return videoTitle;
-  }
+    public String getVideoId() {
+        return videoId;
+    }
 
-  public void setVideoTitle(String videoTitle) {
-    this.videoTitle = videoTitle;
-  }
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
+    }
 
-  // Flutter에서 필요한 thumbnailUrl 필드
-  @JsonProperty("thumbnailUrl")
-  public String getThumbnailUrl() {
-    return thumbnailImageUrl;
-  }
+    public String getVideoTitle() {
+        return videoTitle;
+    }
 
-  public void setThumbnailImageUrl(String thumbnailImageUrl) {
-    this.thumbnailImageUrl = thumbnailImageUrl;
-  }
+    public void setVideoTitle(String videoTitle) {
+        this.videoTitle = videoTitle;
+    }
 
-  public String getThumbnailImageUrl() {
-    return thumbnailImageUrl;
-  }
+    // Flutter에서 필요한 thumbnailUrl 필드
+    @JsonProperty("thumbnailUrl")
+    public String getThumbnailUrl() {
+        return thumbnailImageUrl;
+    }
 
-  // Flutter에서 필요한 viewCount 필드
-  @JsonProperty("viewCount")
-  public int getViewCount() {
-    return readCount;
-  }
+    public void setThumbnailImageUrl(String thumbnailImageUrl) {
+        this.thumbnailImageUrl = thumbnailImageUrl;
+    }
 
-  public void setReadCount(int readCount) {
-    this.readCount = readCount;
-  }
+    public String getThumbnailImageUrl() {
+        return thumbnailImageUrl;
+    }
 
-  public int getReadCount() {
-    return readCount;
-  }
+    // Flutter에서 필요한 viewCount 필드
+    @JsonProperty("viewCount")
+    public int getViewCount() {
+        return readCount;
+    }
 
-  public ChannelVO getChannel() {
-    return channel;
-  }
+    public void setReadCount(int readCount) {
+        this.readCount = readCount;
+    }
 
-  public void setChannel(ChannelVO channel) {
-    this.channel = channel;
-  }
+    public int getReadCount() {
+        return readCount;
+    }
 
-  public String getPublishDateAt() {
-    return publishDateAt;
-  }
+    public ChannelVO getChannel() {
+        return channel;
+    }
 
-  public void setPublishDateAt(String publishDateAt) {
-    this.publishDateAt = publishDateAt;
-  }
+    public void setChannel(ChannelVO channel) {
+        this.channel = channel;
+    }
 
-  public Integer getVideoNo() {
-    return videoNo;
-  }
+    public String getPublishDateAt() {
+        return publishDateAt;
+    }
 
-  public void setVideoNo(Integer videoNo) {
-    this.videoNo = videoNo;
-  }
+    public void setPublishDateAt(String publishDateAt) {
+        this.publishDateAt = publishDateAt;
+    }
+
+    public Integer getVideoNo() {
+        return videoNo;
+    }
+
+    public void setVideoNo(Integer videoNo) {
+        this.videoNo = videoNo;
+    }
 }

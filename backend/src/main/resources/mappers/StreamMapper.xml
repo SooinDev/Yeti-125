@@ -5,16 +5,16 @@
 
 <mapper namespace="com.foririon.project.mapper.StreamMapper">
 
-  <select id="findByLiveId" resultType="com.foririon.project.vo.StreamVO">
-    SELECT * FROM streams WHERE live_id = #{liveId}
-  </select>
+    <select id="findByLiveId" resultType="com.foririon.project.vo.StreamVO">
+        SELECT * FROM streams WHERE live_id = #{liveId}
+    </select>
 
-  <insert id="insertStream" parameterType="com.foririon.project.vo.StreamVO">
-    INSERT IGNORE INTO streams (live_id, title, start_time, notification_sent)
+    <insert id="insertStream" parameterType="com.foririon.project.vo.StreamVO">
+        INSERT IGNORE INTO streams (live_id, title, start_time, notification_sent)
     VALUES (#{liveId}, #{title}, #{startTime}, #{notificationSent})
-  </insert>
-  <update id="updateNotificationSent">
-    UPDATE streams SET notification_sent = TRUE WHERE live_id = #{liveId}
-  </update>
+    </insert>
+    <update id="updateNotificationSent">
+        UPDATE streams SET notification_sent = TRUE WHERE live_id = #{liveId}
+    </update>
 
 </mapper>

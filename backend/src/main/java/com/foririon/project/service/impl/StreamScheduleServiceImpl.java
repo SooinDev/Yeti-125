@@ -11,11 +11,11 @@ import java.util.List;
 @Service
 public class StreamScheduleServiceImpl implements StreamScheduleService {
 
-  @Autowired
-  private StreamScheduleMapper streamScheduleMapper;
+    @Autowired
+    private StreamScheduleMapper streamScheduleMapper;
 
-  @Override
-  public List<StreamScheduleVO> getSchedules() {
-    return streamScheduleMapper.findAllSchedules();
-  }
+    @Override
+    public List<StreamScheduleVO> getSchedules() {
+        return streamScheduleMapper.findAllSchedules();
+    }
 }

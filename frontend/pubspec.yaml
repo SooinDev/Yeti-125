@@ -2,7 +2,7 @@ name: yeti_125
 description: "이리온 스트리머의 공식 팬 앱 - 방송 알림, 리플레이, 커뮤니티 기능 제공"
 publish_to: 'none'
 
-version: 1.0.0+13
+version: 1.0.0+15
 
 environment:
   sdk: '>=3.0.0 <4.0.0'

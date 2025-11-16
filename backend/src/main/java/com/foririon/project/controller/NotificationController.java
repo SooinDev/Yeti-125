@@ -13,32 +13,32 @@ import java.util.Map;
 @RequestMapping("/api/notifications")
 public class NotificationController {
 
-  @Autowired
-  private NotificationService notificationService;
+    @Autowired
+    private NotificationService notificationService;
 
-  @Autowired
-  private FCMService fcmService;
+    @Autowired
+    private FCMService fcmService;
 
-  @PostMapping("/register")
-  public ResponseEntity<Void> registerToken(@RequestBody Map<String, String> payload) {
-    String token = payload.get("token");
-    if (token != null && !token.isEmpty()) {
-      notificationService.registerToken(token);
-    }
-    return ResponseEntity.ok().build();
-  }
-
-  @PostMapping("/token")
-  public ResponseEntity<Map<String, String>> saveFCMToken(@RequestBody Map<String, String> payload) {
-    String fcmToken = payload.get("fcmToken");
-
-    if (fcmToken != null && !fcmToken.isEmpty()) {
-      notificationService.registerToken(fcmToken);
+    @PostMapping("/register")
+    public ResponseEntity<Void> registerToken(@RequestBody Map<String, String> payload) {
+        String token = payload.get("token");
+        if (token != null && !token.isEmpty()) {
+            notificationService.registerToken(token);
+        }
+        return ResponseEntity.ok().build();
     }
 
-    Map<String, String> response = new HashMap<>();
-    response.put("status", "success");
-    response.put("message", "토큰이 저장되었습니다");
-    return ResponseEntity.ok(response);
-  }
+    @PostMapping("/token")
+    public ResponseEntity<Map<String, String>> saveFCMToken(@RequestBody Map<String, String> payload) {
+        String fcmToken = payload.get("fcmToken");
+
+        if (fcmToken != null && !fcmToken.isEmpty()) {
+            notificationService.registerToken(fcmToken);
+        }
+
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "success");
+        response.put("message", "토큰이 저장되었습니다");
+        return ResponseEntity.ok(response);
+    }
 }

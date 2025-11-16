@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface StreamMapper {
-  StreamVO findByLiveId(@Param("liveId") String liveId);
-  void insertStream(StreamVO stream);
-  void updateNotificationSent(@Param("liveId") String liveId);
+    StreamVO findByLiveId(@Param("liveId") String liveId);
+    void insertStream(StreamVO stream);
+    void updateNotificationSent(@Param("liveId") String liveId);
 }

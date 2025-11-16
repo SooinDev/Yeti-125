@@ -5,13 +5,13 @@
 
 <mapper namespace="com.foririon.project.mapper.NotificationMapper">
 
-  <insert id="insertToken" parameterType="string">
-    INSERT IGNORE INTO devices (fcm_token)
+    <insert id="insertToken" parameterType="string">
+        INSERT IGNORE INTO devices (fcm_token)
         VALUES (#{fcmToken})
-  </insert>
+    </insert>
 
-  <select id="getAllTokens" resultType="string">
-    SELECT fcm_token FROM devices WHERE is_active = TRUE
-  </select>
+    <select id="getAllTokens" resultType="string">
+        SELECT fcm_token FROM devices WHERE is_active = TRUE
+    </select>
 
 </mapper>

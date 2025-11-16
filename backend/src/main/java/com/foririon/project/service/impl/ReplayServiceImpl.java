@@ -20,42 +20,42 @@ import java.util.List;
 @Service
 public class ReplayServiceImpl implements ReplayService {
 
-  @Autowired
-  private RestTemplate restTemplate;
+    @Autowired
+    private RestTemplate restTemplate;
 
-  @Value("${chzzk.channel.id}")
-  private String channelId;
+    @Value("${chzzk.channel.id}")
+    private String channelId;
 
-  @Override
-  public List<ReplayVO> getReplays() {
-    try {
-      // Chzzk VOD API 호출
-      String videoUrl = "https://api.chzzk.naver.com/service/v1/channels/" + channelId + "/videos?sortType=LATEST";
+    @Override
+    public List<ReplayVO> getReplays() {
+        try {
+            // Chzzk VOD API 호출
+            String videoUrl = "https://api.chzzk.naver.com/service/v1/channels/" + channelId + "/videos?sortType=LATEST";
 
-      // User-Agent 헤더 추가
-      HttpHeaders headers = new HttpHeaders();
-      headers.set("User-Agent", "Mozilla/5.0");
-      HttpEntity<?> entity = new HttpEntity<>(headers);
+            // User-Agent 헤더 추가
+            HttpHeaders headers = new HttpHeaders();
+            headers.set("User-Agent", "Mozilla/5.0");
+            HttpEntity<?> entity = new HttpEntity<>(headers);
 
-      ParameterizedTypeReference<ChzzkApiResponseVO<ReplayContentVO>> responseType =
-              new ParameterizedTypeReference<ChzzkApiResponseVO<ReplayContentVO>>() {};
+            ParameterizedTypeReference<ChzzkApiResponseVO<ReplayContentVO>> responseType =
+                    new ParameterizedTypeReference<ChzzkApiResponseVO<ReplayContentVO>>() {};
 
-      ResponseEntity<ChzzkApiResponseVO<ReplayContentVO>> responseEntity =
-              restTemplate.exchange(videoUrl, HttpMethod.GET, entity, responseType);
+            ResponseEntity<ChzzkApiResponseVO<ReplayContentVO>> responseEntity =
+                    restTemplate.exchange(videoUrl, HttpMethod.GET, entity, responseType);
 
-      ChzzkApiResponseVO<ReplayContentVO> response = responseEntity.getBody();
+            ChzzkApiResponseVO<ReplayContentVO> response = responseEntity.getBody();
 
-      if (response != null && response.getContent() != null) {
-        ReplayContentVO content = response.getContent();
-        if (content.getData() != null) {
-          return content.getData();
+            if (response != null && response.getContent() != null) {
+                ReplayContentVO content = response.getContent();
+                if (content.getData() != null) {
+                    return content.getData();
+                }
+            }
+
+            return new ArrayList<>();
+        } catch (Exception e) {
+            // Silent fail
+            return new ArrayList<>();
         }
-      }
-
-      return new ArrayList<>();
-    } catch (Exception e) {
-      // Silent fail
-      return new ArrayList<>();
     }
-  }
 }

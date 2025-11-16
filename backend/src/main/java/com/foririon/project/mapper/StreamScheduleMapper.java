@@ -7,5 +7,5 @@ import java.util.List;
 
 @Mapper
 public interface StreamScheduleMapper {
-  List<StreamScheduleVO> findAllSchedules();
+    List<StreamScheduleVO> findAllSchedules();
 }

@@ -5,20 +5,20 @@
 
 <mapper namespace="com.foririon.project.mapper.StreamScheduleMapper">
 
-  <select id="findAllSchedules" resultType="com.foririon.project.vo.StreamScheduleVO">
-    SELECT
-      id,
-      title,
-      scheduled_start_time as scheduledStartTime,
-      description,
-      is_cancelled as isCancelled,
-      created_at as createdAt
-    FROM
-      stream_schedules
-    WHERE
-      is_cancelled = FALSE
-    ORDER BY
-      scheduled_start_time ASC
-  </select>
+    <select id="findAllSchedules" resultType="com.foririon.project.vo.StreamScheduleVO">
+        SELECT
+            id,
+            title,
+            scheduled_start_time as scheduledStartTime,
+            description,
+            is_cancelled as isCancelled,
+            created_at as createdAt
+        FROM
+            stream_schedules
+        WHERE
+            is_cancelled = FALSE
+        ORDER BY
+            scheduled_start_time ASC
+    </select>
 
 </mapper>

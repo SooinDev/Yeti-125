@@ -11,33 +11,33 @@
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-  <task:annotation-driven/>
+    <task:annotation-driven/>
 
-  <tx:annotation-driven/>
+    <tx:annotation-driven/>
 
-  <context:property-placeholder location="classpath:application.properties"/>
+    <context:property-placeholder location="classpath:application.properties"/>
 
-  <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
 
-  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-    <property name="url" value="jdbc:mysql://localhost:3306/for_irion?serverTimezone=Asia/Seoul"/>
-    <property name="username" value="root"/>
-    <property name="password" value="Mysql1234!"/>
-  </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/for_irion?serverTimezone=Asia/Seoul"/>
+        <property name="username" value="root"/>
+        <property name="password" value="Mysql1234!"/>
+    </bean>
 
-  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-    <property name="dataSource" ref="dataSource"/>
-  </bean>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
-  <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-    <property name="dataSource" ref="dataSource"/>
-    <property name="mapperLocations" value="classpath:mappers/**/*.xml"/>
-  </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mappers/**/*.xml"/>
+    </bean>
 
-  <mybatis-spring:scan base-package="com.foririon.project.mapper"/>
-  <context:component-scan base-package="com.foririon.project.service"/>
-  <context:component-scan base-package="com.foririon.project.scheduler"/>
-  <context:component-scan base-package="com.foririon.project.config"/>
+    <mybatis-spring:scan base-package="com.foririon.project.mapper"/>
+    <context:component-scan base-package="com.foririon.project.service"/>
+    <context:component-scan base-package="com.foririon.project.scheduler"/>
+    <context:component-scan base-package="com.foririon.project.config"/>
 
 </beans>

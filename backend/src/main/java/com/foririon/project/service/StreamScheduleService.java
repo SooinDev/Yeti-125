@@ -5,5 +5,5 @@ import com.foririon.project.vo.StreamScheduleVO;
 import java.util.List;
 
 public interface StreamScheduleService {
-  List<StreamScheduleVO> getSchedules();
+    List<StreamScheduleVO> getSchedules();
 }

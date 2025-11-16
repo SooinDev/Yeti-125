@@ -13,11 +13,11 @@ import java.util.List;
 @RequestMapping("/api/stream")
 public class ReplayController {
 
-  @Autowired
-  private ReplayService replayService;
+    @Autowired
+    private ReplayService replayService;
 
-  @GetMapping("/replays")
-  public List<ReplayVO> getReplays() {
-    return replayService.getReplays();
-  }
+    @GetMapping("/replays")
+    public List<ReplayVO> getReplays() {
+        return replayService.getReplays();
+    }
 }

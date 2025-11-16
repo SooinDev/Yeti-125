@@ -10,36 +10,36 @@ import org.springframework.stereotype.Component;
 @Component
 public class StreamCheckScheduler {
 
-  private final StreamService streamService;
-  private final NotificationService notificationService;
+    private final StreamService streamService;
+    private final NotificationService notificationService;
 
-  @Autowired
-  public StreamCheckScheduler(StreamService streamService, NotificationService notificationService) {
-    this.streamService = streamService;
-    this.notificationService = notificationService;
-  }
-
-  @Scheduled(cron = "0 * * * * ?")
-  public void checkLiveStatus() {
-    LiveStatusContentVO status = streamService.getLiveStatus();
-
-    if (status == null) {
-      return;
+    @Autowired
+    public StreamCheckScheduler(StreamService streamService, NotificationService notificationService) {
+        this.streamService = streamService;
+        this.notificationService = notificationService;
     }
 
-    boolean isLive = "OPEN".equals(status.getStatus());
-    String liveId = status.getLiveId();
+    @Scheduled(cron = "0 * * * * ?")
+    public void checkLiveStatus() {
+        LiveStatusContentVO status = streamService.getLiveStatus();
 
-    if (isLive && liveId != null) {
-      if (streamService.shouldSendNotification(liveId)) {
-        streamService.recordStreamStart(status);
+        if (status == null) {
+            return;
+        }
 
-        String title = "이리온 방송 시작!";
-        String body = status.getLiveTitle();
-        notificationService.sendNotification(title, body);
+        boolean isLive = "OPEN".equals(status.getStatus());
+        String liveId = status.getLiveId();
 
-        streamService.markNotificationAsSent(liveId);
-      }
+        if (isLive && liveId != null) {
+            if (streamService.shouldSendNotification(liveId)) {
+                streamService.recordStreamStart(status);
+
+                String title = "이리온 방송 시작!";
+                String body = status.getLiveTitle();
+                notificationService.sendNotification(title, body);
+
+                streamService.markNotificationAsSent(liveId);
+            }
+        }
     }
-  }
 }
